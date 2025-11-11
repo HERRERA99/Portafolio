@@ -1,0 +1,23 @@
+[
+  {
+    "title": "TrackFit",
+    "description": "TrackFit is your go-to app for logging and sharing outdoor activities. Record your workouts with detailed data and privacy controls, explore the Activity Feed for inspiration, and create or join meetups with friends. Customize your profile, follow other users, and review your progress easily with the History Filter. Start building your fitness journey and community with TrackFit.",
+    "image": "/TrackFit.png",
+    "repo": "https://github.com/HERRERA99/TFG-AppTrackActividades",
+    "web": null
+  },
+  {
+    "title": "Filmify",
+    "description": "Filmify is a modern, responsive web app for movie and TV lovers to explore detailed information about films, series, actors, and upcoming releases. Built with React 19 and Vite 7, it delivers a smooth and visually engaging experience with advanced search, rich content details, interactive Swiper carousels, and GSAP animations. It’s a clean and fluid tool for discovering media you’ll love.",
+    "image": "/filmify.png",
+    "repo": "https://github.com/HERRERA99/filmify",
+    "web": "https://filmify-5kaqo07ul-aitors-projects-6000ecdd.vercel.app/"
+  },
+  {
+    "title": "Weather App",
+    "description": "WeatherApp (V1.0) is a native Kotlin Android app that delivers accurate global forecasts using the Open-Meteo API. It detects your location automatically or via manual search, showing real-time conditions like temperature, feels-like, wind speed, and UV index, along with detailed 24-hour and 7-day forecasts. With a clean Material Design interface, it makes weather data clear, fast, and easy to use for everyday planning or travel.",
+    "image": "/WeatherApp.png",
+    "repo": "https://github.com/HERRERA99/WeatherAPP",
+    "web": null
+  }
+]

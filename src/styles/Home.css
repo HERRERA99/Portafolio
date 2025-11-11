@@ -1,0 +1,120 @@
+/* Contenedor con margen del 5% a cada lado */
+.container {
+    width: 65%;
+    margin: 0 auto;
+}
+
+/* Dos columnas: texto a la izquierda, avatar a la derecha */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    min-height: 100vh;
+}
+
+/* Que cada columna ocupe el 50% del ancho disponible */
+.home-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Texto a la izquierda (70%) */
+.home-text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Imagen a la derecha (30%) */
+.home-avatar {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-title {
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.home-text-name {
+    background-image: linear-gradient(#bce1fb, #3daef3);
+    color:transparent;
+    background-clip: text;
+}
+
+.description {
+    font-size: 2rem;
+    color: color-mix(in oklab, #fff 40%, transparent);
+}
+
+/* Tamaño del círculo de fondo */
+.avatar-circle {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background: #E6DCCB;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.7);
+}
+
+/* Imagen dentro del círculo */
+.avatar-circle img {
+    width: 360px;
+    height: 360px;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-download-cv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    background: #3daef3;
+    color: white;
+
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    transition: transform 0.25s ease, background-color 0.25s ease;
+
+    /* tamaño */
+    min-width: 220px;
+}
+
+/* Icono más grande */
+.btn-download-cv svg {
+    font-size: 1.4rem;
+}
+
+/* Hover bonito */
+.btn-download-cv:hover {
+    background-color: #80c9f9;
+    transform: scale(1.05);
+}
+
+/* Activo */
+.btn-download-cv:active {
+    transform: scale(0.97);
+}

@@ -1,0 +1,103 @@
+/* WRAPPER FIJO */
+.navbar-wrapper {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 5000;
+}
+
+/* ISLA GLASS MINIMALISTA SIN BORDE */
+.navbar-island {
+    width: 65%;
+    height: 65px;
+    padding: 0 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* ✅ Glass minimalista sin borde */
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: none !important;
+
+    border-radius: 18px;
+    box-shadow: none; /* sin resplandores */
+}
+
+/* LOGO */
+.navbar-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* LINKS CENTRO */
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+}
+
+/* ✅ BOTONES SIN EFECTO DESGASTADO */
+.nav-btn {
+    background: none;
+    border: none !important;
+
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: color 0.25s ease, opacity 0.25s ease;
+    opacity: 1;
+}
+
+/* Hover */
+.nav-btn:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Activo → blanco sólido */
+.nav-btn.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* No subrayado */
+.nav-btn::after {
+    display: none !important;
+}
+
+/* ICONOS DERECHA */
+.navbar-icons {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0.75;
+    transition: 0.25s;
+}
+
+.nav-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .navbar-island {
+        padding: 0 1rem;
+    }
+    .navbar-links {
+        gap: 1.2rem;
+    }
+}

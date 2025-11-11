@@ -1,0 +1,79 @@
+.contact-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #183045;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-title {
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+/* Label arriba del campo */
+form label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #B9C0C7;
+}
+
+/* Inputs y textarea: sin fondo, borde visible, full width */
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: transparent;
+    border: 2px solid #2A3F52;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #B9C0C7;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #4c6c89;
+}
+
+/* Textarea mantiene estilo y se puede redimensionar verticalmente */
+form textarea {
+    resize: vertical;
+}
+
+/* Botón full width y bien visible */
+form button {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #2A3F52;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: opacity 0.2s ease, background-color 0.25s ease;
+}
+
+form button:hover {
+    opacity: 0.9;
+    background-color: #4c6c89;
+}

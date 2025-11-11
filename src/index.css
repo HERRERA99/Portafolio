@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* 🎨 PALETA PRINCIPAL */
+    --color-bg: #0d0d0f;
+    --color-text: #ffffff;
+    --color-text-soft: #cccccc;
+
+    /* 🎨 COLORES SECUNDARIOS */
+    --color-primary: #5227ff;
+    --color-accent-1: #ff9ffc;
+    --color-accent-2: #b19eef;
+
+    /* 🧱 SISTEMA TIPOGRAFÍA */
+    --font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --fs-xs: 0.75rem;
+    --fs-s: 0.875rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 2rem;
+    --fs-xxl: 3rem;
+
+    /* 🧱 ESPACIADO */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+
+    /* 🧱 RADIUS Y SOMBRAS */
+    --radius-base: 10px;
+    --radius-lg: 20px;
+
+    --shadow-soft: 0 4px 20px rgba(255, 255, 255, 0.05);
+
+    /* 🔧 TIPOGRAFÍA / RENDERING */
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ✅ CUERPO */
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #08233b;
+    color: var(--color-text);
+}
