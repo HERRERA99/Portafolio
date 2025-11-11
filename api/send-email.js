@@ -1,7 +1,8 @@
 // api/send-email.js
 import { Resend } from 'resend';
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+// eslint-disable-next-line no-undef
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async (req, res) => {
     if (req.method !== 'POST') {
@@ -9,9 +10,9 @@ export default async (req, res) => {
     }
 
     // Ahora esperamos 'name', 'email', 'message'
-    const { name, email, message } = req.body;
+    const { name, email, message, asunto } = req.body;
 
-    if (!email || !message || !name) {
+    if (!email || !message || !name || !asunto) {
         return res.status(400).json({ error: 'Faltan campos requeridos.' });
     }
 
@@ -19,7 +20,7 @@ export default async (req, res) => {
         const { data, error } = await resend.emails.send({
             from: 'onboarding@resend.dev',
             to: ['angulosalasaitor@gmail.com'],
-            subject: name,
+            subject: asunto,
             html: `
         <h3>Mensaje de contacto</h3>
         <p><strong>Nombre:</strong> ${name}</p>
