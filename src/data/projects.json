@@ -19,5 +19,12 @@
     "image": "/WeatherApp.png",
     "repo": "https://github.com/HERRERA99/WeatherAPP",
     "web": null
+  },
+  {
+    "title": "Titanic Survivability",
+    "description": "This project predicts Titanic passenger survival using a Random Forest Classifier trained on key features like age, class, and fare. Built with Streamlit, the interactive app provides real-time predictions and probability estimates based on user input. It also includes data visualizations to explore survival trends, demonstrating a complete workflow from feature engineering to web deployment.",
+    "image": "/titanic.png",
+    "repo": "https://github.com/HERRERA99/titanic-survivability-model",
+    "web": "https://herrera99-titanic-survivability-model-streamlit-appapp-eunll3.streamlit.app/"
   }
 ]
