@@ -11,7 +11,7 @@
     "description": "Filmify is a modern, responsive web app for movie and TV lovers to explore detailed information about films, series, actors, and upcoming releases. Built with React 19 and Vite 7, it delivers a smooth and visually engaging experience with advanced search, rich content details, interactive Swiper carousels, and GSAP animations. It’s a clean and fluid tool for discovering media you’ll love.",
     "image": "/filmify.png",
     "repo": "https://github.com/HERRERA99/filmify",
-    "web": "https://filmify-5kaqo07ul-aitors-projects-6000ecdd.vercel.app/"
+    "web": "https://filmify-jet.vercel.app/"
   },
   {
     "title": "Weather App",
