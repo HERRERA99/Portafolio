@@ -1,11 +1,16 @@
 .projects-section {
     padding-top: 8rem;
+    padding-bottom: 4rem; /* Añadido espacio al final */
+}
+
+.project-title {
+    text-align: left !important;
 }
 
 .projects-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px; /* Un poco más de aire entre tarjetas */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -18,15 +23,18 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     align-items: center;
     padding: 25px;
-    height: 250px;
+    /* IMPORTANTE: Quitamos height fijo para que se adapte al contenido si crece */
+    min-height: 250px;
     overflow: hidden;
 }
 
 .image-wrapper {
-    width: 40%;
-    height: 100%;
+    width: 30%;
+    /* Aseguramos que la imagen llene la altura disponible en modo escritorio */
+    align-self: stretch;
     border-radius: 8px;
     overflow: hidden;
+    flex-shrink: 0; /* Evita que la imagen se aplaste */
 }
 
 .project-image {
@@ -34,13 +42,14 @@
     height: 100%;
     display: block;
     object-fit: cover;
+    transition: transform 0.3s ease; /* Efecto sutil al hover opcional */
 }
 
 .project-text-container {
-    width: 60%;
-    height: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Centrar verticalmente el texto */
     padding-left: 2.5rem;
 }
 
@@ -49,43 +58,48 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-bottom: 1rem;
 }
 
 .botons-container {
     display: flex;
     align-items: center;
+    gap: 8px; /* Espacio entre botones */
 }
 
 .icon-button {
-    width: 60px;
-    height: 60px;
+    width: 40px; /* Ajustado ligeramente */
+    height: 40px;
     background-color: #314558;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
     color: white;
-    margin-left: 8px;
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 .icon-button:hover {
     background-color: #08233b;
+    transform: translateY(-2px);
 }
 
 .title-card-text {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Ajustado para mejor balance */
     font-weight: bold;
     margin: 0;
-
     background-image: linear-gradient(#fff, #878787);
-    color:transparent;
+    color: transparent;
     background-clip: text;
+    -webkit-background-clip: text;
+    line-height: 1.2;
 }
 
 .description-card-text {
     color: #A5AEB7;
     text-align: justify;
+    line-height: 1.6;
+    margin: 0;
 }

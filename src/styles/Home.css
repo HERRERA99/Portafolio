@@ -1,23 +1,21 @@
-/* Contenedor con margen del 5% a cada lado */
+/* Contenedor general base */
 .container {
     width: 65%;
     margin: 0 auto;
+    /* Añadimos max-width para pantallas ultra anchas */
+    max-width: 1400px;
 }
 
-/* Dos columnas: texto a la izquierda, avatar a la derecha */
+/* --- HOME SECTION --- */
+
+/* Unificamos las reglas de .home-container aquí */
 .home-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 3rem;
+    /* Usamos min-height para evitar cortes en pantallas pequeñas verticalmente */
     min-height: 100vh;
-}
-
-/* Que cada columna ocupe el 50% del ancho disponible */
-.home-container {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
 }
 
 /* Texto a la izquierda (70%) */
@@ -42,20 +40,24 @@
     font-size: 4rem;
     font-weight: 700;
     margin: 0;
+    line-height: 1.1; /* Mejora la lectura en títulos grandes */
 }
 
 .home-text-name {
     background-image: linear-gradient(#bce1fb, #3daef3);
-    color:transparent;
+    color: transparent;
     background-clip: text;
+    -webkit-background-clip: text; /* Compatibilidad Safari */
 }
 
 .description {
     font-size: 2rem;
     color: color-mix(in oklab, #fff 40%, transparent);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
-/* Tamaño del círculo de fondo */
+/* Círculo de fondo */
 .avatar-circle {
     position: relative;
     width: 350px;
@@ -85,36 +87,27 @@ a {
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: 600;
-
     background: #3daef3;
     color: white;
-
     border: none;
     border-radius: 12px;
     cursor: pointer;
-
     transition: transform 0.25s ease, background-color 0.25s ease;
-
-    /* tamaño */
     min-width: 220px;
 }
 
-/* Icono más grande */
 .btn-download-cv svg {
     font-size: 1.4rem;
 }
 
-/* Hover bonito */
 .btn-download-cv:hover {
     background-color: #80c9f9;
     transform: scale(1.05);
 }
 
-/* Activo */
 .btn-download-cv:active {
     transform: scale(0.97);
 }

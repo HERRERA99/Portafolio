@@ -1,4 +1,5 @@
 import "../styles/Home.css"
+import "../styles/responsive.css"
 import AnimatedContent from "../components/AnimatedContent.jsx";
 import FadeContent from "../components/FadeContent.jsx";
 import {FaDownload} from "react-icons/fa";

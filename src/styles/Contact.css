@@ -1,79 +1,91 @@
 .contact-section {
-    height: 100vh;
+    /* IMPORTANTE: min-height en lugar de height.
+       Esto permite scroll si el móvil es muy bajito o sale el teclado */
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    padding: 2rem 0; /* Padding vertical para que no toque bordes */
 }
 
 .contact-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px; /* Reducido de 1200px para que se vea más elegante */
     margin: 0 auto;
-    padding: 2rem;
+    padding: 3rem;
     background-color: #183045;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .contact-title {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    background-image: linear-gradient(#fff, #878787);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.2rem; /* Más espacio entre inputs */
     width: 100%;
 }
 
-/* Label arriba del campo */
 form label {
     font-size: 1rem;
     font-weight: 600;
     color: #B9C0C7;
+    margin-bottom: -0.5rem; /* Acercar label al input */
 }
 
-/* Inputs y textarea: sin fondo, borde visible, full width */
 form input,
 form textarea {
     width: 100%;
-    padding: 0.8rem 1rem;
-    background: transparent;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03); /* Fondo sutil */
     border: 2px solid #2A3F52;
     border-radius: 8px;
     font-size: 1rem;
-    color: #B9C0C7;
+    color: #fff;
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
     box-sizing: border-box;
     font-family: inherit;
 }
 
 form input:focus,
 form textarea:focus {
-    border-color: #4c6c89;
+    border-color: #3daef3;
+    background: rgba(255, 255, 255, 0.05);
 }
 
-/* Textarea mantiene estilo y se puede redimensionar verticalmente */
 form textarea {
     resize: vertical;
+    min-height: 120px;
 }
 
-/* Botón full width y bien visible */
 form button {
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem;
     margin-top: 1rem;
     border: none;
     border-radius: 8px;
-    background-color: #2A3F52;
+    background-color: #3daef3; /* Color acento consistente */
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #ffffff;
     cursor: pointer;
-    transition: opacity 0.2s ease, background-color 0.25s ease;
+    transition: transform 0.2s ease, background-color 0.25s ease;
 }
 
 form button:hover {
-    opacity: 0.9;
-    background-color: #4c6c89;
+    background-color: #80c9f9;
+    transform: translateY(-2px);
+}
+form button:active {
+    transform: scale(0.98);
 }

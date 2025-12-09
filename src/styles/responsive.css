@@ -1,0 +1,203 @@
+/* --- TABLET Y MÓVILES (max-width: 900px) --- */
+@media (max-width: 900px) {
+    :root {
+        --navbar-top: 12px;
+        --navbar-height: 52px;
+        --navbar-offset: calc(var(--navbar-top) + var(--navbar-height) + 20px);
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    /* Contenedores generales */
+    .container,
+    .navbar-island {
+        width: 90%;
+    }
+
+    /* Navbar */
+    .navbar-island {
+        height: 56px;
+        padding: 0 1rem;
+        top: 12px;
+    }
+    .nav-btn, .navbar-links, .nav-icon {
+        font-size: 1rem !important;
+    }
+
+    /* =========================
+       AJUSTE DE TÍTULOS (REDUCIDOS)
+       ========================= */
+    /* Agrupamos todos los títulos para forzar un tamaño más pequeño y seguro */
+    .title,
+    .home-title,
+    .project-title,
+    .aboutMe-title,
+    .contact-title {
+        font-size: 2.5rem !important; /* Mucho más pequeño que en escritorio */
+        line-height: 1.2;
+        text-align: center;
+        word-wrap: break-word;
+        margin-bottom: 1.5rem;
+    }
+
+    /* =========================
+       SECCIÓN HOME
+       ========================= */
+    .home-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 4rem;
+        gap: 2rem;
+    }
+
+    .home-text {
+        width: 100%;
+        align-items: center; /* Centra el botón horizontalmente */
+        order: 1;
+    }
+
+    /* Botón centrado */
+    .btn-download-cv {
+        margin: 0 auto;
+    }
+
+    .home-avatar {
+        width: 100%;
+        order: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .avatar-circle, .avatar-circle img {
+        width: 280px;
+        height: 280px;
+    }
+
+    /* =========================
+       SECCIÓN PROJECTS (SIN IMAGEN)
+       ========================= */
+    .projects-container {
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        display: flex;
+        flex-direction: column; /* Ya no hace falta reverse porque no hay imagen */
+        height: auto;
+        min-height: auto;
+        padding: 1.5rem;
+        align-items: flex-start;
+    }
+
+    /* 1. ELIMINAR IMAGEN */
+    .image-wrapper {
+        display: none !important;
+    }
+
+    /* 2. TEXTO OCUPA TODO EL ESPACIO */
+    .project-text-container {
+        width: 100%;
+        padding-left: 0;
+        text-align: left; /* Lectura natural a la izquierda */
+    }
+
+    .title-buttons-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+
+    .title-card-text {
+        font-size: 1.8rem; /* Título de la tarjeta ajustado */
+    }
+
+    /* =========================
+       SECCIÓN CONTACT
+       ========================= */
+    .contact-container {
+        padding: 1.5rem;
+    }
+
+    .project-card {
+        flex-direction: column !important; /* Se apilan */
+        align-items: flex-start;
+    }
+
+    .project-text-container {
+        width: 100% !important;
+        padding-left: 0 !important; /* elimina el hueco reservado para la imagen */
+    }
+
+    .botons-container {
+        flex-direction: column !important; /* Se apilan */
+        align-items: flex-start;
+    }
+
+    .aboutMe-description {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* --- MÓVILES PEQUEÑOS (max-width: 600px) --- */
+@media (max-width: 600px) {
+    html {
+        font-size: 13px;
+    }
+
+    /* Títulos aún más compactos en pantallas muy estrechas */
+    .title,
+    .home-title,
+    .project-title,
+    .aboutMe-title,
+    .contact-title {
+        font-size: 2.2rem !important;
+    }
+
+    .navbar-island {
+        width: 95%;
+        padding: 0 0.5rem;
+    }
+
+    .navbar-links {
+        gap: 0.8rem;
+    }
+
+    .project-card {
+        padding: 1.2rem;
+    }
+
+    .title-card-text {
+        font-size: 1.6rem;
+    }
+
+    .icon-button {
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+    }
+
+    .project-card {
+        padding: 0;
+        display: block;
+    }
+
+    .project-card {
+        flex-direction: column !important; /* Se apilan */
+        align-items: flex-start;
+    }
+
+    .project-text-container {
+        width: 100% !important;
+        padding-left: 0 !important; /* elimina el hueco reservado para la imagen */
+    }
+
+    .aboutMe-description {
+        font-size: 1.5rem !important;
+    }
+}

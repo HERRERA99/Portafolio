@@ -1,3 +1,14 @@
+:root {
+    --navbar-top: 20px;
+    --navbar-height: 65px;
+    --navbar-offset: calc(var(--navbar-top) + var(--navbar-height) + 12px); /* pequeño margen extra */
+}
+
+/* Empuja todo el contenido hacia abajo para evitar que quede bajo la navbar fija */
+body {
+    padding-top: var(--navbar-offset);
+}
+
 /* WRAPPER FIJO */
 .navbar-wrapper {
     position: fixed;
@@ -94,6 +105,12 @@
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+    :root {
+        --navbar-top: 12px;
+        --navbar-height: 56px;
+        --navbar-offset: calc(var(--navbar-top) + var(--navbar-height) + 8px);
+    }
+
     .navbar-island {
         padding: 0 1rem;
     }
