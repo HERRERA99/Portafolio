@@ -4,7 +4,6 @@
     --navbar-offset: calc(var(--navbar-top) + var(--navbar-height) + 12px); /* pequeño margen extra */
 }
 
-/* Empuja todo el contenido hacia abajo para evitar que quede bajo la navbar fija */
 body {
     padding-top: var(--navbar-offset);
 }
@@ -56,7 +55,6 @@ body {
     gap: 2rem;
 }
 
-/* ✅ BOTONES SIN EFECTO DESGASTADO */
 .nav-btn {
     background: none;
     border: none !important;
