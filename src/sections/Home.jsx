@@ -23,7 +23,7 @@ export function Home() {
                             delay={0}
                         >
                             <h1 className="home-title">
-                                Hola, soy <strong className="home-text-name">Aitor Angulo Salas</strong>, Ingeniero de
+                                Hola, soy <strong className="home-text-name">Aitor</strong>, Ingeniero de
                                 Software
                             </h1>
                             <p className="description">

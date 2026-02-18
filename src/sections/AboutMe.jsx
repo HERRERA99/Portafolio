@@ -5,7 +5,7 @@ export function AboutMe() {
         <>
             <section id="aboutMe" className="aboutMe-section">
                 <div className="container aboutMe-container">
-                    <h1 className="title aboutMe-title">ABOUT ME</h1>
+                    <h1 className="title aboutMe-title">SOBRE MI</h1>
                     <p className="aboutMe-description">
                         Hola, soy Aitor, graduado en Ingeniería Informática por la Universidad de Cantabria,
                         especializado en Desarrollo de Software. Trabajo como desarrollador full-stack, creando
