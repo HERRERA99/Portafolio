@@ -8,7 +8,7 @@ export function Projects() {
         <>
             <section id="projects" className="projects-section">
                 <div className="container projects-container">
-                    <h1 className="title project-title">PROJECTS</h1>
+                    <h1 className="title project-title">PROYECTOS</h1>
                     {projectsData.map((project, index) => (
                         <AnimatedContent
                             distance={300}

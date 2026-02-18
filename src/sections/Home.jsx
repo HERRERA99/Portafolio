@@ -22,14 +22,19 @@ export function Home() {
                             threshold={0.1}
                             delay={0}
                         >
-                            <h1 className="home-title">Hi, I'm <strong className="home-text-name">Aitor Angulo Salas</strong> a Software Engineer</h1>
+                            <h1 className="home-title">
+                                Hola, soy <strong className="home-text-name">Aitor Angulo Salas</strong>, Ingeniero de
+                                Software
+                            </h1>
                             <p className="description">
-                                who turns curiosity into progress, crafting digital experiences that inspire growth every day.
+                                transformo la curiosidad en progreso, creando experiencias digitales que inspiran
+                                crecimiento cada día.
                             </p>
-                            <a href="/curriculumIngles.pdf" download>
+
+                            <a href="/curriculum.pdf" download>
                                 <button className="btn-download-cv">
-                                    <FaDownload />
-                                    Download CV
+                                    <FaDownload/>
+                                    DESCARGAR CV
                                 </button>
                             </a>
                         </AnimatedContent>

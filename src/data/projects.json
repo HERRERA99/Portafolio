@@ -1,28 +1,28 @@
 [
   {
     "title": "TrackFit",
-    "description": "TrackFit is your go-to app for logging and sharing outdoor activities. Record your workouts with detailed data and privacy controls, explore the Activity Feed for inspiration, and create or join meetups with friends. Customize your profile, follow other users, and review your progress easily with the History Filter. Start building your fitness journey and community with TrackFit.",
+    "description": "TrackFit es tu aplicación de referencia para registrar y compartir actividades al aire libre. Registra tus entrenamientos con datos detallados y controles de privacidad, explora el Feed de Actividades en busca de inspiración y crea o únete a encuentros con amigos. Personaliza tu perfil, sigue a otros usuarios y revisa tu progreso fácilmente con el Filtro de Historial. Comienza a construir tu camino de fitness y tu comunidad con TrackFit.",
     "image": "/TrackFit.png",
     "repo": "https://github.com/HERRERA99/TFG-AppTrackActividades",
     "web": null
   },
   {
     "title": "Filmify",
-    "description": "Filmify is a modern, responsive web app for movie and TV lovers to explore detailed information about films, series, actors, and upcoming releases. Built with React 19 and Vite 7, it delivers a smooth and visually engaging experience with advanced search, rich content details, interactive Swiper carousels, and GSAP animations. It’s a clean and fluid tool for discovering media you’ll love.",
+    "description": "Filmify es una aplicación web moderna y responsive para amantes del cine y la televisión, que permite explorar información detallada sobre películas, series, actores y próximos estrenos. Desarrollada con React 19 y Vite 7, ofrece una experiencia fluida y visualmente atractiva con búsqueda avanzada, detalles ricos de contenido, carruseles interactivos con Swiper y animaciones con GSAP. Es una herramienta limpia y ágil para descubrir el contenido que te encantará.",
     "image": "/filmify.png",
     "repo": "https://github.com/HERRERA99/filmify",
     "web": "https://filmify-jet.vercel.app/"
   },
   {
     "title": "Weather App",
-    "description": "WeatherApp (V1.0) is a native Kotlin Android app that delivers accurate global forecasts using the Open-Meteo API. It detects your location automatically or via manual search, showing real-time conditions like temperature, feels-like, wind speed, and UV index, along with detailed 24-hour and 7-day forecasts. With a clean Material Design interface, it makes weather data clear, fast, and easy to use for everyday planning or travel.",
+    "description": "WeatherApp (V1.0) es una aplicación nativa para Android desarrollada en Kotlin que ofrece pronósticos globales precisos utilizando la API de Open-Meteo. Detecta tu ubicación automáticamente o mediante búsqueda manual, mostrando condiciones en tiempo real como temperatura, sensación térmica, velocidad del viento e índice UV, junto con pronósticos detallados de 24 horas y 7 días. Con una interfaz limpia basada en Material Design, presenta los datos del clima de manera clara, rápida y fácil de usar para la planificación diaria o viajes.",
     "image": "/WeatherApp.png",
     "repo": "https://github.com/HERRERA99/WeatherAPP",
     "web": null
   },
   {
     "title": "Titanic Survivability",
-    "description": "This project predicts Titanic passenger survival using a Random Forest Classifier trained on key features like age, class, and fare. Built with Streamlit, the interactive app provides real-time predictions and probability estimates based on user input. It also includes data visualizations to explore survival trends, demonstrating a complete workflow from feature engineering to web deployment.",
+    "description": "Este proyecto predice la supervivencia de los pasajeros del Titanic utilizando un clasificador Random Forest entrenado con características clave como edad, clase y tarifa. Desarrollado con Streamlit, la aplicación interactiva ofrece predicciones en tiempo real y estimaciones de probabilidad según la información proporcionada por el usuario. También incluye visualizaciones de datos para explorar las tendencias de supervivencia, mostrando un flujo de trabajo completo desde la ingeniería de características hasta el despliegue web.",
     "image": "/titanic.png",
     "repo": "https://github.com/HERRERA99/titanic-survivability-model",
     "web": "https://herrera99-titanic-survivability-model-streamlit-appapp-eunll3.streamlit.app/"

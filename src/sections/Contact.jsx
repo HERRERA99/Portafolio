@@ -59,10 +59,10 @@ export function Contact() {
         <>
             <section id="contact" className="contact-section">
                 <div className="container contact-container">
-                    <h2 className="title contact-title">CONTACT ME</h2>
+                    <h2 className="title contact-title">CONTACTA CONMIGO</h2>
                     {/* 4. Usar onSubmit y el controlador handleSubmit */}
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name">Nombre</label>
                         <input
                             type="text"
                             name="name"
@@ -82,7 +82,7 @@ export function Contact() {
                             required
                         />
 
-                        <label htmlFor="message">Message</label>
+                        <label htmlFor="message">Mensaje</label>
                         <textarea
                             name="message"
                             id="message"
@@ -93,7 +93,7 @@ export function Contact() {
                         ></textarea>
 
                         <button type="submit" disabled={loading}>
-                            {loading ? 'SENDING...' : 'SEND'}
+                            {loading ? 'ENVIANDO...' : 'ENVIAR'}
                         </button>
 
                         {/* Mostrar el estado del envío */}
