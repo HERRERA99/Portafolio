@@ -33,9 +33,9 @@ export function NavBar() {
 
     const navItems = [
         { id: "home", label: "Home" },
-        { id: "aboutMe", label: "About Me" },
-        { id: "projects", label: "Projects" },
-        { id: "contact", label: "Contact" }
+        { id: "aboutMe", label: "Sobre Mi" },
+        { id: "projects", label: "Proyectos" },
+        { id: "contact", label: "Contacto" }
     ];
 
     return (
