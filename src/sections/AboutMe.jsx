@@ -18,9 +18,6 @@ export function AboutMe({ copy }) {
             ))}
           </div>
         </div>
-        <div className="metrics" data-reveal>
-          {copy.metrics.map((metric) => <div key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}
-        </div>
       </div>
     </section>
   )

@@ -15,13 +15,16 @@ export function Home({ copy }) {
             <a className="text-link" href="#contact">{copy.contact}<HiArrowUpRight /></a>
           </div>
         </div>
-        <div className="portrait-stage" data-reveal style={{ '--delay': '160ms' }}>
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="portrait-card">
-            <span className="portrait-label">Aitor<br />Angulo</span>
-            <img src="/PerfilAvatar.png" alt={copy.imageAlt} />
-            <span className="portrait-code">01 / 04</span>
+        <div className="stack-stage" data-reveal style={{ '--delay': '160ms' }}>
+          <div className="stack-panel">
+            <div className="stack-panel-top"><span>{copy.stackLabel}</span><span>01 — 04</span></div>
+            {copy.stack.map((group, index) => (
+              <div className="stack-group" key={group.title}>
+                <span className="stack-index">0{index + 1}</span>
+                <div><p>{group.title}</p><span>{group.items.join(' · ')}</span></div>
+              </div>
+            ))}
+            <div className="stack-signal"><i /><span>{copy.stackFooter}</span></div>
           </div>
         </div>
       </div>
