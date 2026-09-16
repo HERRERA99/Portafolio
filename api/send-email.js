@@ -4,12 +4,18 @@ import { Resend } from 'resend';
 // eslint-disable-next-line no-undef
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const escapeHtml = (value) => String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
 export default async (req, res) => {
     if (req.method !== 'POST') {
         return res.status(405).send('Método no permitido');
     }
 
-    // Ahora esperamos 'name', 'email', 'message'
     const { name, email, message, asunto } = req.body;
 
     if (!email || !message || !name || !asunto) {
@@ -20,13 +26,14 @@ export default async (req, res) => {
         const { data, error } = await resend.emails.send({
             from: 'onboarding@resend.dev',
             to: ['angulosalasaitor@gmail.com'],
-            subject: asunto,
+            replyTo: email,
+            subject: escapeHtml(asunto).slice(0, 160),
             html: `
         <h3>Mensaje de contacto</h3>
-        <p><strong>Nombre:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Nombre:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p><strong>Mensaje:</strong></p>
-        <p>${message}</p>
+        <p>${escapeHtml(message).replaceAll('\n', '<br>')}</p>
       `,
         });
 

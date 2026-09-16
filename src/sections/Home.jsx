@@ -1,54 +1,33 @@
-import "../styles/Home.css"
-import "../styles/Responsive.css"
-import AnimatedContent from "../components/AnimatedContent.jsx";
-import FadeContent from "../components/FadeContent.jsx";
-import {FaDownload} from "react-icons/fa";
+import { HiArrowDown, HiArrowUpRight } from 'react-icons/hi2'
 
-export function Home() {
-    return (
-        <>
-            <section id="home" className="home-section">
-                <div className="container home-container">
-                    <div className="home-text">
-                        <AnimatedContent
-                            distance={300}
-                            direction="vertical"
-                            reverse={false}
-                            duration={1.8}
-                            ease="power3.out"
-                            initialOpacity={0.3}
-                            animateOpacity={true}
-                            scale={1}
-                            threshold={0.1}
-                            delay={0}
-                        >
-                            <h1 className="home-title">
-                                Hola, soy <strong className="home-text-name">Aitor</strong>, Ingeniero de
-                                Software
-                            </h1>
-                            <p className="description">
-                                transformo la curiosidad en progreso, creando experiencias digitales que inspiran
-                                crecimiento cada día.
-                            </p>
-
-                            <a href="/curriculum.pdf" download>
-                                <button className="btn-download-cv">
-                                    <FaDownload/>
-                                    DESCARGAR CV
-                                </button>
-                            </a>
-                        </AnimatedContent>
-                    </div>
-
-                    <div className="home-avatar">
-                        <div className="avatar-circle">
-                            <FadeContent blur={true} duration={1800} easing="ease-out" initialOpacity={0}>
-                                <img src="/PerfilAvatar.svg" alt="Foto Perfil"/>
-                            </FadeContent>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>
-    )
+export function Home({ copy }) {
+  return (
+    <section id="home" className="hero section">
+      <div className="hero-glow" aria-hidden="true" />
+      <div className="container hero-grid">
+        <div className="hero-copy" data-reveal>
+          <div className="availability"><span />{copy.availability}</div>
+          <p className="eyebrow">{copy.role}</p>
+          <h1>{copy.titleStart}<em>{copy.titleAccent}</em>{copy.titleEnd}</h1>
+          <p className="hero-description">{copy.description}</p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#projects">{copy.projects}<HiArrowDown /></a>
+            <a className="text-link" href="#contact">{copy.contact}<HiArrowUpRight /></a>
+          </div>
+        </div>
+        <div className="portrait-stage" data-reveal style={{ '--delay': '160ms' }}>
+          <div className="orbit orbit-one" />
+          <div className="orbit orbit-two" />
+          <div className="portrait-card">
+            <span className="portrait-label">Aitor<br />Angulo</span>
+            <img src="/PerfilAvatar.png" alt={copy.imageAlt} />
+            <span className="portrait-code">01 / 04</span>
+          </div>
+        </div>
+      </div>
+      <div className="container expertise-strip" aria-label={copy.expertiseLabel}>
+        {copy.expertise.map((item) => <span key={item}>{item}</span>)}
+      </div>
+    </section>
+  )
 }

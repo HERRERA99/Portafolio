@@ -1,72 +1,61 @@
-import "../styles/NavBar.css";
-import { useEffect, useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useEffect, useState } from 'react'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { HiArrowDownTray, HiBars3, HiXMark } from 'react-icons/hi2'
 
-export function NavBar() {
-    const [activeSection, setActiveSection] = useState("home");
+const sections = ['home', 'about', 'projects', 'contact']
 
-    useEffect(() => {
-        const sections = ["home", "aboutMe", "projects", "contact"];
+export function NavBar({ copy, language, onLanguageChange }) {
+  const [activeSection, setActiveSection] = useState('home')
+  const [menuOpen, setMenuOpen] = useState(false)
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            { threshold: 0.6 }
-        );
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && setActiveSection(entry.target.id)),
+      { rootMargin: '-35% 0px -55% 0px' },
+    )
+    sections.forEach((id) => {
+      const element = document.getElementById(id)
+      if (element) observer.observe(element)
+    })
+    return () => observer.disconnect()
+  }, [])
 
-        sections.forEach((id) => {
-            const element = document.getElementById(id);
-            if (element) observer.observe(element);
-        });
+  const goTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    setMenuOpen(false)
+  }
 
-        return () => observer.disconnect();
-    }, []);
-
-    const handleScroll = (id) => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    };
-
-    const navItems = [
-        { id: "home", label: "Home" },
-        { id: "aboutMe", label: "Sobre Mi" },
-        { id: "projects", label: "Proyectos" },
-        { id: "contact", label: "Contacto" }
-    ];
-
-    return (
-        <header className="navbar-wrapper">
-            <nav className="navbar-island">
-                {/* IZQUIERDA */}
-                <img src="/logo.svg" alt="Logo Aitor" className="navbar-logo" />
-
-                {/* CENTRO */}
-                <div className="navbar-links">
-                    {navItems.map((item) => (
-                        <button
-                            key={item.id}
-                            onClick={() => handleScroll(item.id)}
-                            className={`nav-btn ${activeSection === item.id ? "active" : ""}`}
-                        >
-                            {item.label}
-                        </button>
-                    ))}
-                </div>
-
-                {/* DERECHA */}
-                <div className="navbar-icons">
-                    <a href="https://github.com/HERRERA99" target="_blank" rel="noreferrer">
-                        <FaGithub className="nav-icon" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/aitor-angulo-salas-b81356257/" target="_blank" rel="noreferrer">
-                        <FaLinkedin className="nav-icon" />
-                    </a>
-                </div>
-            </nav>
-        </header>
-    );
+  return (
+    <header className="nav-wrap">
+      <nav className="nav container" aria-label="Main navigation">
+        <button className="brand" onClick={() => goTo('home')} aria-label="Aitor Angulo — Home">AA<span>.</span></button>
+        <button className="menu-toggle" onClick={() => setMenuOpen((value) => !value)} aria-expanded={menuOpen} aria-label={copy.menu}>
+          {menuOpen ? <HiXMark /> : <HiBars3 />}
+        </button>
+        <div className={`nav-panel ${menuOpen ? 'is-open' : ''}`}>
+          <div className="nav-links">
+            {copy.items.map((item) => (
+              <button key={item.id} onClick={() => goTo(item.id)} className={activeSection === item.id ? 'active' : ''}>
+                {item.label}
+              </button>
+            ))}
+          </div>
+          <div className="nav-actions">
+            <div className="language-switcher" aria-label={copy.language}>
+              {['es', 'en', 'fr'].map((code) => (
+                <button key={code} className={language === code ? 'active' : ''} onClick={() => onLanguageChange(code)} aria-pressed={language === code}>
+                  {code.toUpperCase()}
+                </button>
+              ))}
+            </div>
+            <div className="social-links">
+              <a href="https://github.com/HERRERA99" target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/aitor-angulo-salas-b81356257/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
+              <a href="/curriculum.pdf" download aria-label={copy.cv}><HiArrowDownTray /></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  )
 }

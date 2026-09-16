@@ -1,77 +1,36 @@
-import "../styles/Projects.css"
-import projectsData from "../data/projects.json"
-import {FaExternalLinkAlt, FaGithub, FaGlobe, FaLink} from "react-icons/fa";
-import AnimatedContent from "../components/AnimatedContent.jsx";
+import { FaGithub } from 'react-icons/fa'
+import { HiArrowUpRight } from 'react-icons/hi2'
 
-export function Projects() {
-    return (
-        <>
-            <section id="projects" className="projects-section">
-                <div className="container projects-container">
-                    <h1 className="title project-title">PROYECTOS</h1>
-                    {projectsData.map((project, index) => (
-                        <AnimatedContent
-                            distance={300}
-                            direction="vertical"
-                            reverse={false}
-                            duration={1.8}
-                            ease="power3.out"
-                            initialOpacity={0.3}
-                            animateOpacity={true}
-                            scale={1}
-                            threshold={0.1}
-                            delay={0}
-                        >
-                            <div
-                                key={index}
-                                className="project-card"
-                            >
-                                {/* Imagen a la izquierda */}
-                                <div className="image-wrapper">
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="project-image"
-                                    />
-                                </div>
-
-                                {/* Contenido a la derecha */}
-                                <div className="project-text-container">
-                                    {/* Botones arriba a la derecha y titulo */}
-                                    <div className="title-buttons-container">
-                                        <h2 className="title-card-text">{project.title}</h2>
-                                        <div className="botons-container">
-                                            {project.repo && (
-                                                <a
-                                                    href={project.repo}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="icon-button repo-button"
-                                                >
-                                                    <FaGithub/>
-                                                </a>
-                                            )}
-                                            {project.web && (
-                                                <a
-                                                    href={project.web}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="icon-button web-button"
-                                                >
-                                                    <FaLink />
-                                                </a>
-                                            )}
-                                        </div>
-                                    </div>
-
-                                    {/* Descripción */}
-                                    <p className="description-card-text">{project.description}</p>
-                                </div>
-                            </div>
-                        </AnimatedContent>
-                    ))}
+export function Projects({ copy }) {
+  return (
+    <section id="projects" className="section projects">
+      <div className="container">
+        <div className="section-heading section-heading-inline" data-reveal>
+          <div><p className="section-index">03</p><p className="eyebrow">{copy.eyebrow}</p><h2>{copy.title}</h2></div>
+          <p>{copy.intro}</p>
+        </div>
+        <div className="project-list">
+          {copy.items.map((project, index) => (
+            <article className="project-card" key={project.title} data-reveal>
+              <a className="project-media" href={project.web || project.repo} target="_blank" rel="noreferrer" aria-label={`${copy.open} ${project.title}`}>
+                <img src={project.image} alt="" loading="lazy" />
+                <span className="project-number">0{index + 1}</span><span className="project-open"><HiArrowUpRight /></span>
+              </a>
+              <div className="project-info">
+                <div><p className="project-type">{project.type}</p><h3>{project.title}</h3></div>
+                <p>{project.description}</p>
+                <div className="project-footer">
+                  <ul aria-label="Technologies">{project.stack.map((technology) => <li key={technology}>{technology}</li>)}</ul>
+                  <div className="project-links">
+                    <a href={project.repo} target="_blank" rel="noreferrer"><FaGithub />{copy.code}</a>
+                    {project.web && <a href={project.web} target="_blank" rel="noreferrer">{copy.live}<HiArrowUpRight /></a>}
+                  </div>
                 </div>
-            </section>
-        </>
-    )
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
