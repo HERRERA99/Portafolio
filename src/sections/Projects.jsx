@@ -11,16 +11,16 @@ export function Projects({ copy }) {
         </div>
         <div className="project-list">
           {copy.items.map((project, index) => (
-            <article className="project-card" key={project.title} data-reveal>
+            <article className={`project-card${project.featured ? ' project-card-featured' : ''}`} key={project.title} data-reveal>
               <a className="project-media" href={project.web || project.repo} target="_blank" rel="noreferrer" aria-label={`${copy.open} ${project.title}`}>
-                <img src={project.image} alt="" loading="lazy" />
+                <img src={project.image} alt={`${copy.preview} ${project.title}`} loading="lazy" decoding="async" />
                 <span className="project-number">0{index + 1}</span><span className="project-open"><HiArrowUpRight /></span>
               </a>
               <div className="project-info">
-                <div><p className="project-type">{project.type}</p><h3>{project.title}</h3></div>
+                <div>{project.featured && <span className="project-featured-label"><i />{copy.featured}</span>}<p className="project-type">{project.type}</p><h3>{project.title}</h3></div>
                 <p>{project.description}</p>
                 <div className="project-footer">
-                  <ul aria-label="Technologies">{project.stack.map((technology) => <li key={technology}>{technology}</li>)}</ul>
+                  <ul aria-label={copy.technologies}>{project.stack.map((technology) => <li key={technology}>{technology}</li>)}</ul>
                   <div className="project-links">
                     <a href={project.repo} target="_blank" rel="noreferrer"><FaGithub />{copy.code}</a>
                     {project.web && <a href={project.web} target="_blank" rel="noreferrer">{copy.live}<HiArrowUpRight /></a>}

@@ -1,8 +1,15 @@
 const projects = {
+  chambapp: { title: 'Chambapp', image: '/chambapp.jpg', repo: 'https://github.com/HERRERA99/Chambapp', web: 'https://chambapp-tracker.vercel.app/', stack: ['React', 'TypeScript', 'Supabase', 'Vite'], featured: true },
   trackfit: { title: 'TrackFit', image: '/TrackFit.png', repo: 'https://github.com/HERRERA99/TFG-AppTrackActividades', stack: ['Kotlin', 'Jetpack Compose', 'Firebase'] },
   filmify: { title: 'Filmify', image: '/filmify.png', repo: 'https://github.com/HERRERA99/filmify', web: 'https://filmify-jet.vercel.app/', stack: ['React 19', 'Vite', 'GSAP'] },
   weather: { title: 'Weather App', image: '/WeatherApp.png', repo: 'https://github.com/HERRERA99/WeatherAPP', stack: ['Kotlin', 'Material Design', 'Open-Meteo'] },
   titanic: { title: 'Titanic Survivability', image: '/titanic.png', repo: 'https://github.com/HERRERA99/titanic-survivability-model', web: 'https://herrera99-titanic-survivability-model-streamlit-appapp-eunll3.streamlit.app/', stack: ['Python', 'Random Forest', 'Streamlit'] },
+}
+
+const projectUpdates = {
+  es: { featured: 'Nuevo proyecto', technologies: 'Tecnologías', preview: 'Vista previa de', enableMotion: 'Activar animaciones', disableMotion: 'Pausar animaciones', type: 'Web · Productividad', description: 'Tu jornada, en un solo lugar. Una aplicación de control de tiempo con fichajes exactos, cronómetro por tarea, proyectos y balance semanal. Incluye partes de horas, referencias a Odoo y exportación de informes.' },
+  en: { featured: 'Latest project', technologies: 'Technologies', preview: 'Preview of', enableMotion: 'Enable animations', disableMotion: 'Pause animations', type: 'Web · Productivity', description: 'Your workday, in one place. A time tracking application with precise clock-ins, task timers, projects and a weekly overview. Includes timesheets, Odoo references and report exports.' },
+  fr: { featured: 'Nouveau projet', technologies: 'Technologies', preview: 'Aperçu de', enableMotion: 'Activer les animations', disableMotion: 'Mettre les animations en pause', type: 'Web · Productivité', description: 'Votre journée, au même endroit. Une application de suivi du temps avec pointages précis, chronomètre par tâche, projets et bilan hebdomadaire. Avec feuilles de temps, références Odoo et export de rapports.' },
 }
 
 export const content = {
@@ -31,3 +38,9 @@ export const content = {
     footer: 'Conçu et développé avec précision en Cantabrie.',
   },
 }
+
+Object.entries(projectUpdates).forEach(([language, updates]) => {
+  Object.assign(content[language].nav, { enableMotion: updates.enableMotion, disableMotion: updates.disableMotion })
+  Object.assign(content[language].projects, { featured: updates.featured, technologies: updates.technologies, preview: updates.preview })
+  content[language].projects.items.unshift({ ...projects.chambapp, type: updates.type, description: updates.description })
+})

@@ -4,6 +4,7 @@ export function Home({ copy }) {
   return (
     <section id="home" className="hero section">
       <div className="hero-glow" aria-hidden="true" />
+      <div className="hero-beam" aria-hidden="true" />
       <div className="container hero-grid">
         <div className="hero-copy" data-reveal>
           <div className="availability"><span />{copy.availability}</div>
@@ -16,6 +17,11 @@ export function Home({ copy }) {
           </div>
         </div>
         <div className="stack-stage" data-reveal style={{ '--delay': '160ms' }}>
+          <div className="stack-orbits" aria-hidden="true">
+            <span className="stack-orbit stack-orbit-one"><i /></span>
+            <span className="stack-orbit stack-orbit-two"><i /></span>
+            <span className="stack-orbit stack-orbit-three"><i /></span>
+          </div>
           <div className="stack-panel">
             <div className="stack-panel-top"><span>{copy.stackLabel}</span><span>01 — 04</span></div>
             {copy.stack.map((group, index) => (
